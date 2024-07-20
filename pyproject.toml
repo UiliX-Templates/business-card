@@ -1,0 +1,22 @@
+# REMEMBER: Read the README to see what changes need to be made.
+[project]
+authors = [
+    {name = "your_name", email = "your_email"}
+]
+
+requires-python = ">=3.11"
+
+[project.domains]
+main = "https://example.com"
+associated-domains = [
+    "example.com",
+    "www.example.com",
+]
+
+[tool.pyqwe]
+debug = "app:debug"
+tailwind-compile = "*:npx tailwindcss -i ./tailwindcss/__init__.css -o ./app/static/main.css"
+tailwind-watch = "*:npx tailwindcss -i ./tailwindcss/__init__.css -o ./app/static/main.css --watch"
+docker-l1 = "*:docker build -f Dockerfile-L1 -t project_name_l1 ."
+docker-deploy = "*:docker compose up --build -d"
+update-favicon = "*:pyhead favicons -s _assets/raw_favicon.png -o app/static/favicons -scg"

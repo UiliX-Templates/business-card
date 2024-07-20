@@ -1,0 +1,39 @@
+body {
+    @apply flex justify-center;
+    background-color: var(--bg-body);
+}
+
+.business-card {
+    @apply flex flex-col rounded-3xl p-6 my-10 w-full gap-6;
+    max-width: 500px;
+    background-color: var(--bg-business-card);
+}
+
+.info-with-icon {
+    @apply flex items-center gap-2;
+}
+
+.icon {
+    @apply w-6 h-6;
+}
+
+.info {
+    @apply text-sm;
+}
+
+.info p {
+    @apply text-sm p-0 m-0;
+}
+
+.tags {
+    @apply flex flex-wrap gap-2;
+}
+
+.tags a {
+    @apply rounded-full px-3 py-2 text-sm;
+    background-color: var(--bg-tags);
+}
+
+.tags a:hover {
+    background-color: var(--bg-hover-tags);
+}

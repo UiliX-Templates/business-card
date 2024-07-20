@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    {{ head() }}
+</head>
+
+<body>
+<div class="business-card">
+    <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
+
+    {% if business_info.phone %}
+        <div class="info-with-icon">
+            <div class="icon">
+                <img src="{{ url_for('static', filename='icons/phone.svg') }}" alt="Phone Icon">
+            </div>
+            <div class="info">
+                {{ business_info.phone }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if business_info.address %}
+        <div class="info-with-icon">
+            <div class="icon">
+                <img src="{{ url_for('static', filename='icons/address.svg') }}" alt="Address Icon">
+            </div>
+            <div class="info">
+                {{ business_info.address }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if business_info.email %}
+        <div class="info-with-icon">
+            <div class="icon">
+                <img src="{{ url_for('static', filename='icons/email.svg') }}" alt="Email Icon">
+            </div>
+            <div class="info">
+                {{ business_info.email }}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if business_info.tags %}
+        <div class="tags">
+            <a href="https://facebook.com/" target="_blank">Facebook</a>
+        </div>
+    {% endif %}
+
+</div>
+</body>
+
+</html>

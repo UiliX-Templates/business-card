@@ -1,0 +1,7 @@
+FROM project_name_l1
+WORKDIR /flask
+COPY app app
+RUN mkdir -p app/instance
+COPY gunicorn.conf.py gunicorn.conf.py
+
+ENTRYPOINT ["gunicorn"]

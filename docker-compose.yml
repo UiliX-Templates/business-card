@@ -1,0 +1,9 @@
+services:
+  web:
+    container_name: project_name
+    build:
+        context: .
+        dockerfile: Dockerfile-L2
+    restart: always
+    ports:
+      - "4015:5000"
