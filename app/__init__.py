@@ -30,4 +30,4 @@ def create_app():
 
 def debug():
     app = create_app()
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=5000)
