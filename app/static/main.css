@@ -561,8 +561,10 @@ video {
 :root {
   --bg-body: #21212c;
   --bg-business-card: #ffffff;
+  --bg-info-container: #fbfbfb;
   --bg-tags: #dfe6fb;
   --bg-hover-tags: #c6dcfb;
+  --border-info-container: #e0e0e0;
 }
 
 body {
@@ -582,6 +584,19 @@ body {
   padding: 1.5rem;
   max-width: 500px;
   background-color: var(--bg-business-card);
+}
+
+.info-container {
+  margin-bottom: 0.25rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 1.5rem;
+  border-width: 1px;
+  padding: 1.5rem;
+  background-color: var(--bg-info-container);
+  border-color: var(--border-info-container);
 }
 
 .info-with-icon {
