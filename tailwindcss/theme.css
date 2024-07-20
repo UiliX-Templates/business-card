@@ -1,7 +1,10 @@
 :root {
     --bg-body: #21212c;
     --bg-business-card: #ffffff;
+    --bg-info-container: #fbfbfb;
     --bg-tags: #dfe6fb;
 
     --bg-hover-tags: #c6dcfb;
+
+    --border-info-container: #e0e0e0;
 }

@@ -9,6 +9,12 @@ body {
     background-color: var(--bg-business-card);
 }
 
+.info-container {
+    @apply flex flex-col rounded-3xl p-6 mb-1 w-full gap-6 border;
+    background-color: var(--bg-info-container);
+    border-color: var(--border-info-container);
+}
+
 .info-with-icon {
     @apply flex items-center gap-2;
 }
