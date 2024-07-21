@@ -4,13 +4,19 @@
 python3 -m venv .venv && source .venv/bin/activate
 ```
 
-**Production:**
+### Production:
 
 ```bash
 pip install -r requirements/production.txt
 ```
 
-**Development:**
+#### Run
+
+```bash
+gunicorn
+```
+
+### Development:
 
 ```bash
 pip install -r requirements/development.txt
@@ -20,33 +26,59 @@ pip install -r requirements/development.txt
 npm install
 ```
 
-## Changes
+#### Run
 
-`pyproject.toml`
+`terminal 1`
 
-```text
-docker-l1 = "*:docker build -f Dockerfile-L1 -t |>> project_name_l1 <<| ."
+```bash
+pyqwe debug
 ```
+
+`terminal 2`
+
+```bash
+pyqwe tailwind-watch
+```
+
+### Docker:
+
+#### !!! Change Files !!!
 
 `Dockerfile-L2`
 
 ```text
-FROM |>> project_name_l1 <<| (this has to match above)
+FROM <LAYER 1 IMAGE NAME>
+
+Example: FROM my_project_l1
 ```
 
 `docker-compose.yml`
 
 ```text
-container_name: |>> project_name <<|
+container_name: <CONTAINER NAME>
+
+Example: my_project (will show as business_card_my_project in docker)
 ```
 
-`app/business_info.py`
+#### Build and Run
+
+```bash
+docker build -f Dockerfile-L1 -t <LAYER 1 IMAGE NAME> .
+
+# Example: docker build -f Dockerfile-L1 -t my_project_l1 .
+```
+
+```bash
+docker-compose up -d --build
+```
+
+## Files to Update
 
 ```text
-Change business info to match your business...
+app/business_info.py
 ```
 
-### Replace Favicons
+## Replace Favicons
 
 **NOTE:** Only changeable in a development environment.
 
@@ -54,26 +86,16 @@ Change business info to match your business...
 pyhead favicons -s [file].[png, jpg, jpeg, gif, svg, tiff] -d app/static/favicons -scg
 ```
 
-## Deployment
+### Update from _assers/raw_favicon.png
+
+Overwrite the `_assers/raw_favicon.png` file with the new favicon.
 
 ```bash
-git clone [repository] && cd [repository]
+pyqwe update-favicons
 ```
 
-```bash
-pyqwe docker-l1
-```
+## Update in Deployment
 
 ```bash
-pyqwe docker-deploy
-```
-
-**Update deployment:**
-
-```bash
-cd [repository]
-```
-
-```bash
-git pull && pyqwe docker-deploy
+git pull && docker-compose up -d --build
 ```

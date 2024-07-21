@@ -17,6 +17,4 @@ associated-domains = [
 debug = "app:debug"
 tailwind-compile = "*:npx tailwindcss -i ./tailwindcss/__init__.css -o ./app/static/main.css"
 tailwind-watch = "*:npx tailwindcss -i ./tailwindcss/__init__.css -o ./app/static/main.css --watch"
-docker-l1 = "*:docker build -f Dockerfile-L1 -t project_name_l1 ."
-docker-deploy = "*:docker compose up --build -d"
-update-favicon = "*:pyhead favicons -s _assets/raw_favicon.png -o app/static/favicons -scg"
+update-favicons = "*:pyhead favicons -s _assets/raw_favicon.png -o app/static/favicons -scg"

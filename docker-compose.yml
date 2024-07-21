@@ -1,5 +1,5 @@
 services:
-  web:
+  business_card:
     container_name: project_name
     build:
         context: .
