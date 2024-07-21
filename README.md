@@ -1,3 +1,7 @@
+# A simple business card website.
+
+![screenshot.png](_assets%2Fscreenshot.png)
+
 ## Setup
 
 ```bash
